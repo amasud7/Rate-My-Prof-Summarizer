@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import summarizer
 
 app = Flask(__name__)
@@ -8,6 +8,7 @@ link = []
 def load():
     if request.method == "POST":
         link.append(request.form.get('gate'))
+        return redirect("/summary")
     return render_template("index.html") # this is blank flask page with empty form and question
 
 
