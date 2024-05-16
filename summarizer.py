@@ -54,7 +54,9 @@ def formatting(para):
     pass
 
 # call function
-print(summarize("https://www.ratemyprofessors.com/professor/1869654", model))
+if __name__ == '__main__':
+    reviews()
+    summarize()
 
 
 
