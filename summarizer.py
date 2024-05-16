@@ -3,12 +3,14 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import google.generativeai as palm
 import key
+import page
+
 
 
 # for getting reviews from website
 driver = webdriver.Firefox() # which browser it opens
 driver.implicitly_wait(1) # wait for elements to load in page
-driver.get("https://www.ratemyprofessors.com/professor/2510723") # currently manual link, but prof search bar?
+driver.get(page.link[0]) # currently manual link, but prof search bar?
 driver.find_element(By.XPATH, "/html/body/div[5]/div/div/button").click() # find pop up button for cookies and click to exit
 driver.implicitly_wait(1)
 elements = driver.find_elements(By.CLASS_NAME, "gRjWel") # list of the reviews
@@ -46,8 +48,13 @@ def summarize(reviews, model):
     )
     return completion.result
 
+# function for formatting the summarized paragraph
+def formatting(para):
+    pass
+
 # call function
-print(summarize(reviews, model))
+#print(summarize(reviews, model))
+test = summarize(reviews, model)
 
 
 
