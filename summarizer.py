@@ -5,10 +5,13 @@ import google.generativeai as palm
 import key
 
 
+# adding headless option for firefox
+head = webdriver.FirefoxOptions()
+head.add_argument("--headless")
 
 def reviews(link):
     # for getting reviews from website
-    driver = webdriver.Firefox() # which browser it opens
+    driver = webdriver.Firefox(options=head) # which browser it opens
     driver.implicitly_wait(1) # wait for elements to load in page
     driver.get(link) # currently manual link, but prof search bar?
     driver.find_element(By.XPATH, "/html/body/div[5]/div/div/button").click() # find pop up button for cookies and click to exit
@@ -20,7 +23,7 @@ def reviews(link):
     for element in elements:
         reviews.append(element.text)
 
-    driver.close() # closes the window 
+    driver.quit() # closes the window 
     return reviews
 
 # configuring key
