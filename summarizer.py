@@ -52,14 +52,15 @@ def summarize(link, model):
     )
     return completion.result
 
-# function for formatting the summarized paragraph
-def formatting(para):
-    pass
 
-# call function
+# make sure it doesn't run when imported only when called
 if __name__ == '__main__':
     reviews()
     summarize()
+
+
+
+#print(summarize("https://www.ratemyprofessors.com/professor/2735520", model))
 
 
 
