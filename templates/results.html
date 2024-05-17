@@ -2,15 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FlaskApp</title>
+    <title>Rate My Prof</title>
 </head>
 <body>
     <h1 align="center">Rate My Professor Summarizer</h1>
-    <form method="post">
+    <form method="post" align="center">
         <label for="gate">Please Enter Rate My Professor Link:</label>
         <input type="text", id="gate", name="gate">
         <button>Enter</button>
     </form>
-    <h1>{{results}}</h1>
+    <div>
+        <pre>{{results}}</pre>
+    </div>
+    
 </body>
 </html>
