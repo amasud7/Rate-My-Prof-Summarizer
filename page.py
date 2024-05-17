@@ -18,7 +18,6 @@ def summary():
     test = summarizer.summarize(link[0], summarizer.model)
     return render_template("results.html", results=test)
 
-
 if __name__ == '__main__':
     app.run()
 
